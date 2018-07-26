@@ -1,7 +1,7 @@
 /**
- * PartidoPoliticoController
+ * CandidaturaController
  *
- * @description :: Server-side logic for managing Partidopoliticoes
+ * @description :: Server-side logic for managing candidaturas
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
@@ -12,10 +12,10 @@ module.exports = {
             res_service: "error",
             des_error: ""
         };
-        var query = "select * from tbl_partido_politico p where p.part_est_registro = '1';"
-        PartidoPolitico.query(query, function (err, result) {
+        var query = "select * from tbl_tipo_candidatura;"
+        Candidatos.query(query, function (err, result) {
            if (err) {
-                dataResponse.res_service = "Error listando los partidos politicos";
+                dataResponse.res_service = "Error buscando tipos de candidatura";
                 dataResponse.des_error = err;
                 res.json(dataResponse)
            }
@@ -28,6 +28,6 @@ module.exports = {
                 res.json(dataResponse)
            }
         });        
-    }	
+    }
 };
 

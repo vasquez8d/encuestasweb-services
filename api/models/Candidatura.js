@@ -1,28 +1,25 @@
 /**
- * PartidoPolitico.js
+ * Candidatura.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: 'tbl_partido_politico',
+  tableName: 'tbl_tipo_candidatura',
   attributes: {
-    part_id: {
+    tcan_id: {
       primaryKey: true,
       unique: true,
       autoIncrement: true,
       type: "integer"
     },
-    part_nombre: 'string',
-    part_siglas: 'string',
-    part_lider: 'string',
-    part_logo_url: 'string',
-    part_est_registro: {
+    tcan_desc: 'string',
+    tcan_est_registr: {
       type: 'integer',
       defaultsTo: 1
     },
-    part_fec_registro: {
+    tcan_fec_registro: {
       type: 'string',
       defaultsTo: function () {
         var d = new Date();
@@ -39,4 +36,3 @@ module.exports = {
   autoCreatedAt: false,
   autoUpdatedAt: false
 };
-

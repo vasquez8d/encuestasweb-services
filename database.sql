@@ -62,14 +62,18 @@ create table tbl_candidatos
  cand_link_twt varchar(500),
  cand_link_inst varchar(500),
  cand_img_url varchar(500),
- cand_flg_prv bit,
- cand_ubigeo_prv varchar(10),
- cand_flg_dst bit,
- cand_ubigeo_dist varchar(10),
+ tcan_id int,
+ cand_ubigeo varchar(10),
  cand_est_registro bit,
  cand_fec_registro varchar(20),
  cand_user_id int,
  constraint tbl_candidatos_pk primary key (cand_id));
+
+create table tbl_tipo_candidatura
+(tcan_id int,
+ tcan_desc varchar(150),
+ tcan_est_registr bit,
+ tcan_fec_registro varchar(20));
 
 create table tbl_partido_politico
 (part_id int,
@@ -92,7 +96,14 @@ create table tbl_suscripciones
  subs_user_act_id int,
  constraint tbl_suscripciones_pk primary key (subs_id));
 
-
+create table tbl_ubigeos
+(ubg_id int,
+ ubg_dpt int,
+ ubg_prv int,
+ ubg_dst int,
+ ubg_desc varchar(100),
+ constraint tbl_ubigeos_pk primary key (ubg_id));
+ 
 create sequence tbl_encuestas_seq
  start with 1
  increment by 1;

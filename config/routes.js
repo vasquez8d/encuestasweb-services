@@ -58,4 +58,48 @@ module.exports.routes = {
       origin: '*'
     }
   },
+  /***************************************************************************
+   * routes Tipo de Candidatura                                              *
+   ***************************************************************************/
+  'get /candidatura/list' : {
+    controller: 'CandidaturaController',
+    action: 'list',
+    cors: {
+      origin: '*'
+    }
+  },  
+  /***************************************************************************
+   * routes Ubigeos                                                          *
+   ***************************************************************************/
+  'get /ubigeo/departamentos': {
+    controller: 'UbigeosController',
+    action: 'departamentos',
+    cors: {
+      origin: '*'
+    }
+  },
+  'get /ubigeo/provincias/:ubg_dpt': {
+    controller: 'UbigeosController',
+    action: 'provincias',
+    cors: {
+      origin: '*'
+    }
+  },
+  'get /ubigeo/distritos/:ubg_dpt/:ubg_prv': {
+    controller: 'UbigeosController',
+    action: 'distritos',
+    cors: {
+      origin: '*'
+    }
+  },
+  /***************************************************************************
+   * routes Partido Politico                                                 *
+   ***************************************************************************/
+  'get /ppolitico/list': {
+    controller: 'PartidoPoliticoController',
+    action: 'list',
+    cors: {
+      origin: '*'
+    }
+  },
 };
