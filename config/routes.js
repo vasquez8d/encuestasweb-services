@@ -102,4 +102,14 @@ module.exports.routes = {
       origin: '*'
     }
   },
+  /***************************************************************************
+   * routes Encuestadoras                                                    *
+   ***************************************************************************/
+  'get /encuestadora/list': {
+    controller: 'EncuestadorasController',
+    action: 'list',
+    cors: {
+      origin: '*'
+    }
+  },
 };

@@ -16,8 +16,8 @@ module.exports = {
     },
     tcan_desc: 'string',
     tcan_est_registr: {
-      type: 'integer',
-      defaultsTo: 1
+      type: 'string',
+      defaultsTo: "1"
     },
     tcan_fec_registro: {
       type: 'string',
