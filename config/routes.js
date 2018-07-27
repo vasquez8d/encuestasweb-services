@@ -122,6 +122,13 @@ module.exports.routes = {
       origin: '*'
     }
   },
+  'post /encuesta/create': {
+    controller: 'EncuestasController',
+    action: 'create',
+    cors: {
+      origin: '*'
+    }
+  },  
   'get /encuesta/details/:encs_id': {
     controller: 'EncuestasController',
     action: 'details',
