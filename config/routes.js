@@ -112,4 +112,21 @@ module.exports.routes = {
       origin: '*'
     }
   },
+  /***************************************************************************
+   * routes Encuestas                                                        *
+   ***************************************************************************/  
+  'post /encuesta/ultimos': {
+    controller: 'EncuestasController',
+    action: 'listultimos',
+    cors: {
+      origin: '*'
+    }
+  },
+  'get /encuesta/details/:encs_id': {
+    controller: 'EncuestasController',
+    action: 'details',
+    cors: {
+      origin: '*'
+    }
+  },  
 };

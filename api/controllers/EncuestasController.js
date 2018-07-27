@@ -25,6 +25,31 @@ module.exports = {
             res.json(dataResponse);
         });
     },
+    details: function(req, res){
+        var dataResponse = {
+            data_result: "",
+            res_service: "error",
+            des_error: ""
+        };
+        var dataSearch = req.allParams();
+        var query = "select * from tbl_encuestas p where p.encs_id = p1";
+        var finalQuery = query.replace('p1', dataSearch.encs_id);
+        Candidatos.query(finalQuery, function (err, result) {
+           if (err) {
+                dataResponse.res_service = "Error buscando candidatos";
+                dataResponse.des_error = err;
+                res.json(dataResponse)
+           }
+           if (result.rows.length > 0) {
+                dataResponse.data_result = result.rows;
+                dataResponse.res_service = "ok";
+                res.json(dataResponse)
+           } else {
+                dataResponse.res_service = "No existe información.";
+                res.json(dataResponse)
+           }
+        });
+    },
     listultimos: function(req, res){
         var dataResponse = {
             data_result: "",
