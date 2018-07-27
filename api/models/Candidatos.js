@@ -27,8 +27,8 @@ module.exports = {
       cand_flg_dst: 'integer',
       cand_ubigeo_dist: 'string',
       cand_est_registro: {
-        type: 'integer',
-        defaultsTo: 1
+        type: 'string',
+        defaultsTo: "1"
       },
       cand_fec_registro: {
         type: 'string',

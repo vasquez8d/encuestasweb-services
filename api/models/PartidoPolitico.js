@@ -19,8 +19,8 @@ module.exports = {
     part_lider: 'string',
     part_logo_url: 'string',
     part_est_registro: {
-      type: 'integer',
-      defaultsTo: 1
+      type: 'string',
+      defaultsTo: "1"
     },
     part_fec_registro: {
       type: 'string',
