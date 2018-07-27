@@ -38,7 +38,8 @@ module.exports = {
         return dateFormat;
       }
     },
-    encs_user_id: 'integer'
+    encs_user_id: 'integer',
+    encs_img_url: 'string'
   },
   autoCreatedAt: false,
   autoUpdatedAt: false
