@@ -112,6 +112,13 @@ module.exports.routes = {
       origin: '*'
     }
   },
+  'get /encuestadora/details/:encu_id': {
+    controller: 'EncuestadorasController',
+    action: 'details',
+    cors: {
+      origin: '*'
+    }
+  },  
   /***************************************************************************
    * routes Encuestas                                                        *
    ***************************************************************************/  
@@ -122,6 +129,13 @@ module.exports.routes = {
       origin: '*'
     }
   },
+  'post /encuesta/listxencuestadora': {
+    controller: 'EncuestasController',
+    action: 'listxencuestadora',
+    cors: {
+      origin: '*'
+    }
+  },  
   'post /encuesta/create': {
     controller: 'EncuestasController',
     action: 'create',

@@ -75,15 +75,16 @@ module.exports = {
            }
         });
     },
-    listxsearch: function(req, res){
+    listxencuestadora: function(req, res){
         var dataResponse = {
             data_result: "",
             res_service: "error",
             des_error: ""
         };
         var dataSearch = req.allParams();
-        var query = "";
-        Candidatos.query(query, function (err, result) {
+        var query = "select * from (select * from tbl_encuestas p where p.encu_id = p3 order by to_date(p.encs_fec_registro, 'DD/MM/YYYY HH:MI:SS') desc) tmp limit p1 offset p2;";
+        var finalQuery = query.replace('p1', dataSearch.limit).replace('p2', dataSearch.offset).replace('p3', dataSearch.encu_id);
+        Candidatos.query(finalQuery, function (err, result) {
            if (err) {
                 dataResponse.res_service = "Error buscando candidatos";
                 dataResponse.des_error = err;
@@ -98,29 +99,5 @@ module.exports = {
                 res.json(dataResponse)
            }
         });
-    },
-    listhome: function(req, res){
-        var dataResponse = {
-            data_result: "",
-            res_service: "error",
-            des_error: ""
-        };
-        var dataSearch = req.allParams();
-        var query = "";
-        Candidatos.query(query, function (err, result) {
-           if (err) {
-                dataResponse.res_service = "Error buscando candidatos";
-                dataResponse.des_error = err;
-                res.json(dataResponse)
-           }
-           if (result.rows.length > 0) {
-                dataResponse.data_result = result.rows;
-                dataResponse.res_service = "ok";
-                res.json(dataResponse)
-           } else {
-                dataResponse.res_service = "No existe información.";
-                res.json(dataResponse)
-           }
-        });        
     }
 };
